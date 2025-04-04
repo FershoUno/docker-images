@@ -6,7 +6,7 @@ Deploy an easy Socks5 server with Docker by following one of the following instr
 
 Run the following command line to deploy microsocks 
 
-    docker run -d --name microsocks -p 8080:1080 -e USERNAME=MyProxyUser -e PASSWORD=MyP4ssw0rdPr0xy fershouno/microsocks:latest
+    docker run -d --name microsocks -p 1080:1080 -e USERNAME=MyProxyUser -e PASSWORD=MyPr0xyP4ssw0rd fershouno/microsocks:latest
 
 ### Docker Compose
 
@@ -20,7 +20,7 @@ Create the docker-compose.yaml file and add the following content if you  want t
         - "1080:1080"
         environment:
         USERNAME: MyProxyUser
-        PASSWORD: MyP4ssw0rdPr0xy
+        PASSWORD: MyPr0xyP4ssw0rd
         restart: unless-stopped
 
 
@@ -29,7 +29,7 @@ Create the docker-compose.yaml file and add the following content if you  want t
 Create a .env file with the following contents
 
     USERNAME=MyProxyUser
-    PASSWORD=MyP4ssw0rdPr0xy
+    PASSWORD=MyPr0xyP4ssw0rd
     PORT=1080
 
 
@@ -40,7 +40,7 @@ Create a docker-compose.yaml file with the following contents
         image: fershouno/microsocks:latest
         container_name: microsocks
         ports:
-        - "${PORT:-8080}:1080"
+        - "${PORT:-1080}:1080"
         environment:
         - USERNAME=${USERNAME:-user}
         - PASSWORD=${PASSWORD:-pass}
